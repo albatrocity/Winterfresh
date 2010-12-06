@@ -1,4 +1,7 @@
-/* @override http://rossisbrown.com/mint/styles/winterfresh/style.css */
+/* @override 
+	http://rossisbrown.com/mint/styles/winterfresh/style.css
+	http://rossisbrown.com/mint/styles/vanilla_mint/style.css
+*/
 
 /* 
 ----------------------------------------------------------------------------- 
@@ -36,18 +39,9 @@ HEADER
 	border-top: 2px groove #8898a8;
 	background-color: #576777;
 	color: #CCC;
-	-webkit-border-top-left-radius: 0px;
-	-webkit-border-top-right-radius: 0px;
-	-webkit-border-bottom-right-radius: 4px;
-	-webkit-border-bottom-left-radius: 4px;
-	-moz-border-radius-topleft: 0px;
-	-moz-border-radius-topright: 0px;
-	-moz-border-radius-bottomright: 4px;
-	-moz-border-radius-bottomleft: 4px;
-	border-top-left-radius: 0px;
-	border-top-right-radius: 0px;
-	border-bottom-right-radius: 4px;
-	border-bottom-left-radius: 4px;	
+	-webkit-border-radius:0 0 4px 4px;
+	-moz-border-radius:0 0 4px 4px;
+	border-radius: 0 0 4px 4px;
 	-webkit-box-shadow:0 4px 6px rgba(0,0,0,.8);
 	-moz-box-shadow: 0px 4px 6px rgba(0,0,0,.8);
 	box-shadow: 0px 4px 6px rgba(0,0,0,.8);
@@ -174,13 +168,11 @@ form a:hover
 #preferences h1
 {
 	display: block;
-  	-webkit-border-top-left-radius: 4px;
-	-webkit-border-top-right-radius: 4px;
-	-moz-border-radius-topleft: 4px;
-	-moz-border-radius-topright: 4px;
-	border-top-left-radius: 4px;
-	border-top-right-radius: 4px;
+  	-webkit-border-radius: 4px 4px 0 0;
+	-moz-border-radius: 4px 4px 0 0;
+	border-radius: 4px 4px 0 0;
 	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#7f90a1), color-stop(0.6, #576777), to(#576777)) padding-box;
+	background:-moz-linear-gradient(19% 75% 90deg,#7F90A1, #576777, #576777 60%);
 	color: #0d1216;
 	text-shadow: rgba(256,256,256, .3) 0 1px 1px;
 	border-top: 1px solid #a6b5c7;
@@ -404,11 +396,11 @@ GRAPH TABLE
 	border-right: 2px solid #e4e7e9;
 }
 
-.graph .bar {
+.graph .bar, .compare {
   	margin-left: 4px;
 }
 
-.graph .bar .total
+.graph .bar .total, .compare .increase
 {
 	background: #9eab3e;
 	border-left: 1px solid #7a852b;
@@ -425,6 +417,14 @@ GRAPH TABLE
 	border-top: 1px solid #a09c33;
 }
 
+.compare .decrease {
+  	background: #e5e067;
+	border-bottom: 1px solid #a09c33;
+	-webkit-box-shadow:0 0 2px #666;
+	-moz-box-shadow:0 0 2px #666;	
+	box-shadow:0 0 2px #666;	
+}
+
 .graph .key
 {
 	color: #FFF;
@@ -437,9 +437,14 @@ GRAPH TABLE
 	color: #566E3D;
 }
 
-.graph .bar .total span
+.graph .bar .total span, .compare .increase span
 {
 	border-top: 1px solid #c0d04b;
+}
+
+.compare .decrease span {
+  border-top: 1px solid #f1eea8;
+  display: block;
 }
 
 .graph .bar .unique span
@@ -788,12 +793,9 @@ DISPLAY TABS
 
 .display ul.tabs li a {
 	-webkit-transition:background-color .3s;
-  	-webkit-border-top-left-radius: 4px;
-	-webkit-border-top-right-radius: 4px;
-	-moz-border-radius-topleft: 4px;
-	-moz-border-radius-topright: 4px;
-	border-top-left-radius: 4px;
-	border-top-right-radius: 4px;
+  	-webkit-border-radius: 4px 4px 0 0;
+	-moz-border-radius: 4px 4px 0 0;
+	border-radius: 4px 4px 0 0;
 	color: #eaeced;
 	text-shadow: 0 1px 1px rgba(0,0,0,.3);
 	padding: 4px 8px 14px;
