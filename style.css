@@ -555,14 +555,13 @@ FOLDER-RELATED
 	background-position: 0 4px;
 }
 
-.display table tr.folder-open td, .display table tr.folder-open td.focus
+.display table tr.folder-open td
 {
-	background-position: 0 -78px;
 	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#7f90a1), color-stop(0.6, #576777), to(#576777)) padding-box;
 	color: #fff;
 }
 
-.display table tr.folder-open td.focus {
+.display table tr.folder-open td.focus, .display table tr.folder-open.last-child td.focus {
   	background: url(images/bg-arrow.gif) no-repeat left -78px, -webkit-gradient(linear, 0% 0%, 0% 100%, from(#7f90a1), color-stop(0.6, #576777), to(#576777)) padding-box;
   	font-weight: bold;
 }
@@ -603,24 +602,26 @@ table tbody tr.folder-open td.focus a:hover, table tbody tr.folder-open:hover td
 
 .folder-contents-open tr td
 {
-	background-color: #899caf;
-  color: #e4e7e9;
+	background-color: #e0e5c1;
+  color: #29292a;
 }
 
 .display table .folder-contents-open tr.first-child td,
 .display table .folder-contents-open tr.only-child td
 {
-	background: #899caf;
+	background: #e0e5c1;
+	color: #000;
 }
 
 .display table .folder-contents-open tr.last-child td
 {
-	background: #899caf;
+	background: #e0e5c1;
+	border-bottom: 2px groove #f1f7ff;
 }
 
 .display table .folder-contents-open tr.alt td
 {
-	background-color: #768b9f;
+	background-color: #eaedd7;
 }
 
 
@@ -628,7 +629,7 @@ table tbody tr.folder-open td.focus a:hover, table tbody tr.folder-open:hover td
 .display table .folder-contents-open tr.alt:hover td,
 .display table .folder-contents-open td.focus:hover
 {
-	background-color: #b7c5d2;
+	background-color: #fff;
 	color: #000;
 	text-shadow: #657686 0 1 4px;
 }
@@ -639,7 +640,8 @@ table tbody tr.folder-open td.focus a:hover, table tbody tr.folder-open:hover td
 }
 
 .display table .folder-contents-open tr.insig td {
-  opacity: .6;
+  opacity: .3;
+  color: #000;
 }
 .display table .folder-contents-open tr.insig:hover td {
   opacity: 1;
