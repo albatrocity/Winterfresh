@@ -1,6 +1,5 @@
 /* @override 
 	http://rossisbrown.com/mint/styles/winterfresh/style.css
-	http://rossisbrown.com/mint/styles/vanilla_mint/style.css
 */
 
 /* 
@@ -171,8 +170,20 @@ form a:hover
   	-webkit-border-radius: 4px 4px 0 0;
 	-moz-border-radius: 4px 4px 0 0;
 	border-radius: 4px 4px 0 0;
-	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#7f90a1), color-stop(0.6, #576777), to(#576777)) padding-box;
-	background:-moz-linear-gradient(19% 75% 90deg,#7F90A1, #576777, #576777 60%);
+background-image: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    color-stop(0, rgb(127,144,161)),
+    color-stop(0.55, rgb(87,103,119)),
+    color-stop(1, rgb(87,103,119))
+);
+background-image: -moz-linear-gradient(
+    center top,
+    rgb(127,144,161) 0%,
+    rgb(87,103,119) 55%,
+    rgb(87,103,119) 100%
+);
 	color: #0d1216;
 	text-shadow: rgba(256,256,256, .3) 0 1px 1px;
 	border-top: 1px solid #a6b5c7;
@@ -284,7 +295,7 @@ form a:hover
 
 .display table td.focus span
 {
-	color: #999;
+	color: #3d4753;
 }
 
 .display table td.focus:hover span
@@ -298,7 +309,7 @@ form a:hover
 
 .display table td.focus span a
 {
-	color: #777;
+	color: #08090b;
 }
 
 .display table td.focus span a:hover
@@ -418,7 +429,7 @@ GRAPH TABLE
 }
 
 .compare .decrease {
-  	background: #e5e067;
+  	background: #e5e281;
 	border-bottom: 1px solid #a09c33;
 	-webkit-box-shadow:0 0 2px #666;
 	-moz-box-shadow:0 0 2px #666;	
@@ -544,14 +555,37 @@ FOLDER-RELATED
 	background-position: 0 4px;
 }
 
-.display table tr.folder-open td.focus
+.display table tr.folder-open td, .display table tr.folder-open td.focus
 {
 	background-position: 0 -78px;
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#7f90a1), color-stop(0.6, #576777), to(#576777)) padding-box;
+	color: #fff;
 }
 
-.display table tr.first-child.folder-open td.focus
-{
-	background-position: 0 -76px;
+.display table tr.folder-open td.focus {
+  	background: url(images/bg-arrow.gif) no-repeat left -78px, -webkit-gradient(linear, 0% 0%, 0% 100%, from(#7f90a1), color-stop(0.6, #576777), to(#576777)) padding-box;
+  	font-weight: bold;
+}
+
+.display table tr.folder-open td.last-child {
+  	-webkit-border-radius: 0 4px 0 0;
+  	-moz-border-radius: 0 4px 0 0;
+  	border-radius: 0 4px 0 0;
+}
+
+
+table tbody tr.folder-open td.focus a {
+  color: #fff;
+  text-shadow: none;
+}
+table tbody tr.folder-open td.focus a:hover, table tbody tr.folder-open:hover td.focus a {
+  color: #e4e7e9;
+}
+
+.display table tr.folder-open td.first-child {
+	-webkit-border-radius: 4px 0 0 0;
+  	-moz-border-radius: 4px 0 0 0;
+  	border-radius: 4px 0 0 0;
 }
 
 .display table tr.loading td.focus,
@@ -569,23 +603,24 @@ FOLDER-RELATED
 
 .folder-contents-open tr td
 {
-	background-color: #eff6c5;
+	background-color: #899caf;
+  color: #e4e7e9;
 }
 
 .display table .folder-contents-open tr.first-child td,
 .display table .folder-contents-open tr.only-child td
 {
-	background: #eff6c5;
+	background: #899caf;
 }
 
 .display table .folder-contents-open tr.last-child td
 {
-	background: #eff6c5;
+	background: #899caf;
 }
 
 .display table .folder-contents-open tr.alt td
 {
-	background-color: #e2ebaf;
+	background-color: #768b9f;
 }
 
 
@@ -593,14 +628,26 @@ FOLDER-RELATED
 .display table .folder-contents-open tr.alt:hover td,
 .display table .folder-contents-open td.focus:hover
 {
-	background-color: #acb760;
-	color: #0d1216;
+	background-color: #b7c5d2;
+	color: #000;
+	text-shadow: #657686 0 1 4px;
 }
 
 .display table .folder-contents-open tr.insig td
 {
-	color: #859077;
+	color: #e4e7e9;
 }
+
+.display table .folder-contents-open tr.insig td {
+  opacity: .6;
+}
+.display table .folder-contents-open tr.insig:hover td {
+  opacity: 1;
+  color:  #000;
+}
+
+
+
 
 /*
 ----------------------------------------------------------------------------- 
